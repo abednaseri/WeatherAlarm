@@ -14,6 +14,7 @@
 		B1566D5022638BB400FE8F92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1566D4F22638BB400FE8F92 /* Assets.xcassets */; };
 		B1566D5322638BB400FE8F92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1566D5122638BB400FE8F92 /* LaunchScreen.storyboard */; };
 		B1566D5E22638BB400FE8F92 /* WeatherAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1566D5D22638BB400FE8F92 /* WeatherAlarmTests.swift */; };
+		B1566D6D2265092E00FE8F92 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1566D6C2265092E00FE8F92 /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		B1566D4222638BB200FE8F92 /* WeatherAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1566D4522638BB200FE8F92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B1566D4522638BB200FE8F92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		B1566D4722638BB200FE8F92 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B1566D4A22638BB200FE8F92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1566D4D22638BB200FE8F92 /* WeatherAlarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherAlarm.xcdatamodel; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		B1566D5922638BB400FE8F92 /* WeatherAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1566D5D22638BB400FE8F92 /* WeatherAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAlarmTests.swift; sourceTree = "<group>"; };
 		B1566D5F22638BB400FE8F92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1566D6C2265092E00FE8F92 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +83,10 @@
 			children = (
 				B1566D6922638C0A00FE8F92 /* Storyboards */,
 				B1566D6822638BCF00FE8F92 /* Controllers */,
-				B1566D4522638BB200FE8F92 /* AppDelegate.swift */,
 				B1566D4F22638BB400FE8F92 /* Assets.xcassets */,
 				B1566D5422638BB400FE8F92 /* Info.plist */,
 				B1566D4C22638BB200FE8F92 /* WeatherAlarm.xcdatamodeld */,
+				B1566D6C2265092E00FE8F92 /* DateExtensions.swift */,
 			);
 			path = WeatherAlarm;
 			sourceTree = "<group>";
@@ -101,6 +103,7 @@
 		B1566D6822638BCF00FE8F92 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B1566D4522638BB200FE8F92 /* AppDelegate.swift */,
 				B1566D4722638BB200FE8F92 /* MainVC.swift */,
 			);
 			path = Controllers;
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1566D4E22638BB200FE8F92 /* WeatherAlarm.xcdatamodeld in Sources */,
+				B1566D6D2265092E00FE8F92 /* DateExtensions.swift in Sources */,
 				B1566D4822638BB200FE8F92 /* MainVC.swift in Sources */,
 				B1566D4622638BB200FE8F92 /* AppDelegate.swift in Sources */,
 			);
