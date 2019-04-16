@@ -9,9 +9,9 @@
 import Foundation
 
 extension Date{
-    func getDayOfWeekAndDayOfMonth() -> String{
+    func getDayOfWeek() -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE dd"
+        dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: self)
     }
 }
