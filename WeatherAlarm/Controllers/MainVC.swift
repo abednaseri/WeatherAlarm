@@ -12,10 +12,13 @@ import CoreLocation
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate{
     
     var locationManager: CLLocationManager!
-    var weather: Weather!
+    var weather: ForcastWeather!
     var weatherForcastArray: [ForcastList] = []
+    // First item in ForcastList is today, use it instead of separate call
+    var currentWeather: ForcastList!
     var didFindLocation = false
 
+    @IBOutlet weak var weatherTypeBGImageView: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var weatherTypeLabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
@@ -43,7 +46,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     //
     
     // Get the weather forcast
-    func getWeatherData(){
+    func getWeatherData(completed: @escaping () -> ()){
         guard let url = URL(string: FORCAST_URL) else { return }
         let request = URLRequest(url: url)
         
@@ -54,15 +57,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
                 
                 do{
                     let decoder = JSONDecoder()
-                    self.weather = try decoder.decode(Weather.self, from: data)
+                    self.weather = try decoder.decode(ForcastWeather.self, from: data)
                     self.weatherForcastArray = self.weather.list
-                    self.tableView.reloadData()
-                    
+                    self.currentWeather = self.weatherForcastArray.first
                 }catch let error{
                     print(error.localizedDescription)
                 }
+                completed()
             }
         }.resume()
+    }
+    
+    // Update UI
+    func updateUI(){
+        weatherTypeBGImageView.image = UIImage(named: "\(currentWeather.weather.first?.main ?? "")_bg")
+        cityNameLabel.text = "\(weather.city.name)"
+        weatherTypeLabel.text = "\(currentWeather.weather.first?.main ?? "Not found")"
+        currentTempLabel.text = currentWeather.temp.day.toCelsius() + "°"
+        
+        // Delete the first item, since it shows today
+        self.weatherForcastArray.remove(at: 0)
+        self.tableView.reloadData()
     }
     
     // Show an alert
@@ -89,8 +104,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             let forcast = weatherForcastArray[indexPath.row]
             
             cell.dayOfWeekLabel.text = Date(timeIntervalSince1970: forcast.dt).getDayOfWeek()
-            cell.maxTempLabel.text = "\(Int((forcast.temp.max - 273.15).rounded()))"
-            cell.minTempLabel.text = "\(Int((forcast.temp.min - 273.15).rounded()))"
+            cell.maxTempLabel.text = forcast.temp.max.toCelsius()
+            cell.minTempLabel.text = forcast.temp.min.toCelsius()
             
             return cell
         }
@@ -126,7 +141,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             if !didFindLocation{
                 Location.sharedInstance.Latitude = lastLocation.coordinate.latitude
                 Location.sharedInstance.Longitude = lastLocation.coordinate.longitude
-                getWeatherData()
+                getWeatherData{
+                    self.updateUI()
+                }
                 didFindLocation = true
                 locationManager.stopUpdatingLocation()
             }else{

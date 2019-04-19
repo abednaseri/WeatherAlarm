@@ -13,6 +13,4 @@ let LONGITUDE_URL = "&lon="
 let APP_ID = "&appid="
 let API_KEY = "e1322918754fc48f7f5806937b582e85"
 
-let FORCAST_URL = "\(BASE_API_URL)\(FORCAST_PREFIX_URL)\(LATITUDE_URL)\(Location.sharedInstance.Latitude)\(LONGITUDE_URL)\(Location.sharedInstance.Longitude)&cnt=10\(APP_ID)\(API_KEY)"
-
-let currentWeatherUrl = "http://api.openweathermap.org/data/2.5/weather?lat=50.35357&lon=7.589907&appid=e1322918754fc48f7f5806937b582e85"
+let FORCAST_URL = "\(BASE_API_URL)\(FORCAST_PREFIX_URL)\(LATITUDE_URL)\(Location.sharedInstance.Latitude)\(LONGITUDE_URL)\(Location.sharedInstance.Longitude)&cnt=11\(APP_ID)\(API_KEY)"

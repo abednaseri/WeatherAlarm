@@ -18,32 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iPP-Ma-sK9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdf-Uz-KJU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gkx-JJ-uGi">
-                                <rect key="frame" x="16" y="84" width="382" height="190"/>
+                                <rect key="frame" x="16" y="84" width="382" height="166"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Koblenz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjw-Gy-N03">
-                                        <rect key="frame" x="135.5" y="0.0" width="111" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjw-Gy-N03">
+                                        <rect key="frame" x="166" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                        <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-sN-SdD">
-                                        <rect key="frame" x="172" y="49" width="38" height="23.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-sN-SdD">
+                                        <rect key="frame" x="166" y="58" width="50" height="50"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9j-Dd-FMW">
-                                        <rect key="frame" x="128.5" y="80.5" width="125" height="109.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9j-Dd-FMW">
+                                        <rect key="frame" x="166" y="116" width="50" height="50"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="80"/>
-                                        <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fNY-SG-7mu">
-                                <rect key="frame" x="0.0" y="290" width="414" height="523"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="266" width="414" height="547"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForcastCell" rowHeight="104" id="ugQ-7N-mjA" customClass="ForcastCell" customModule="WeatherAlarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="104"/>
@@ -55,34 +63,36 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaC-R1-K55">
                                                     <rect key="frame" x="8" y="41.5" width="64.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ITc-fd-3eZ">
-                                                    <rect key="frame" x="329" y="41.5" width="45" height="20.5"/>
+                                                    <rect key="frame" x="361" y="41.5" width="45" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZx-uN-bSM">
                                                             <rect key="frame" x="0.0" y="0.0" width="18.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhW-9D-7Iy">
                                                             <rect key="frame" x="34.5" y="0.0" width="10.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="0.69705793072597133" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ITc-fd-3eZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RaC-R1-K55" secondAttribute="trailing" constant="8" symbolic="YES" id="0oZ-zG-ZQU"/>
                                                 <constraint firstItem="ITc-fd-3eZ" firstAttribute="centerY" secondItem="X5G-nX-f3b" secondAttribute="centerY" id="5Tl-bB-NV9"/>
                                                 <constraint firstAttribute="trailing" secondItem="ITc-fd-3eZ" secondAttribute="trailing" constant="8" id="TfE-Te-qbN"/>
                                                 <constraint firstItem="RaC-R1-K55" firstAttribute="leading" secondItem="X5G-nX-f3b" secondAttribute="leading" constant="8" id="qX6-SJ-uG1"/>
                                                 <constraint firstItem="RaC-R1-K55" firstAttribute="centerY" secondItem="X5G-nX-f3b" secondAttribute="centerY" id="zEW-3F-qHt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50409796779141103" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="dayOfWeekLabel" destination="RaC-R1-K55" id="3i3-iR-mst"/>
                                             <outlet property="maxTempLabel" destination="BZx-uN-bSM" id="5eP-gF-pdH"/>
@@ -96,11 +106,19 @@
                         <constraints>
                             <constraint firstItem="gkx-JJ-uGi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="4dn-gI-oOQ"/>
                             <constraint firstItem="fNY-SG-7mu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DNL-si-bw9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iPP-Ma-sK9" secondAttribute="trailing" id="EK5-jA-zuP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gkx-JJ-uGi" secondAttribute="trailing" constant="16" id="M33-xQ-Sf2"/>
+                            <constraint firstItem="iPP-Ma-sK9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QsE-AM-exN"/>
                             <constraint firstItem="gkx-JJ-uGi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SuD-17-jnm"/>
+                            <constraint firstItem="iPP-Ma-sK9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Y9g-as-cAy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kdf-Uz-KJU" secondAttribute="trailing" id="bg3-S2-Bdf"/>
+                            <constraint firstItem="Kdf-Uz-KJU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gNW-xz-uy4"/>
+                            <constraint firstAttribute="bottom" secondItem="Kdf-Uz-KJU" secondAttribute="bottom" id="gyl-5v-f5O"/>
                             <constraint firstItem="fNY-SG-7mu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hKQ-3S-D6Q"/>
+                            <constraint firstItem="Kdf-Uz-KJU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ldF-7f-kHr"/>
                             <constraint firstItem="fNY-SG-7mu" firstAttribute="top" secondItem="gkx-JJ-uGi" secondAttribute="bottom" constant="16" id="lm5-D6-aXg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fNY-SG-7mu" secondAttribute="trailing" id="p9d-4F-UBd"/>
+                            <constraint firstAttribute="bottom" secondItem="iPP-Ma-sK9" secondAttribute="bottom" id="sAc-vz-uvs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -109,6 +127,7 @@
                         <outlet property="cityNameLabel" destination="Kjw-Gy-N03" id="NCw-Sv-63P"/>
                         <outlet property="currentTempLabel" destination="D9j-Dd-FMW" id="VCG-ww-Vu6"/>
                         <outlet property="tableView" destination="fNY-SG-7mu" id="1sq-zY-TBK"/>
+                        <outlet property="weatherTypeBGImageView" destination="iPP-Ma-sK9" id="q0K-JV-N53"/>
                         <outlet property="weatherTypeLabel" destination="xaK-sN-SdD" id="kxd-PT-6sk"/>
                     </connections>
                 </viewController>
