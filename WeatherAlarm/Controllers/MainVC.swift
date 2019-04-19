@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate{
     
+    var locationManager: CLLocationManager!
     var weather: Weather!
     var weatherForcastArray: [ForcastList] = []
+    var didFindLocation = false
 
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var weatherTypeLabel: UILabel!
@@ -24,25 +27,24 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        getWeatherData()
-        // Do any additional setup after loading the view.
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
 
     
     
     
+    
+    
     //
-    // FUNCTIONS
+    // MARK: - FUNCTIONS
     //
     
     // Get the weather forcast
     func getWeatherData(){
-        let dayUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=50.35357&lon=7.57883&cnt=10&appid=e1322918754fc48f7f5806937b582e85"
-        
-        let url = URL(string: dayUrl)!
-        
-        
+        guard let url = URL(string: FORCAST_URL) else { return }
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -61,11 +63,20 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }.resume()
-        
+    }
+    
+    // Show an alert
+    func showAlert(withMessage message: String, withTitle title: String, actionTitle: String? = "OK"){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
     
+    //
+    // MARK: - DELEGATES
+    //
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,18 +100,42 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
-    struct Weather: Decodable {
-        let list: [ForcastList]
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if CLLocationManager.locationServicesEnabled(){
+            switch status {
+            case .authorizedWhenInUse:
+                didFindLocation = false
+                locationManager.startUpdatingLocation()
+                break
+            case .denied, .restricted:
+                // Show alert or block user
+                showAlert(withMessage: "Oopsie! I'm not sure if I can show you any weather information, if I don't know where you are located", withTitle: "No location, no Weather!")
+                break
+            default:
+                locationManager.requestWhenInUseAuthorization()
+            }
+        }else{
+            // Alert enable location services
+            showAlert(withMessage: "Please go to your device Settings -> Privacy -> Location and enable your Location Services.", withTitle: "Location Services is disabled")
+        }
     }
-    struct ForcastList: Decodable {
-        let dt: Double
-        let temp: Temperature
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let lastLocation = locations.last{
+            // If locations is not still taken
+            if !didFindLocation{
+                Location.sharedInstance.Latitude = lastLocation.coordinate.latitude
+                Location.sharedInstance.Longitude = lastLocation.coordinate.longitude
+                getWeatherData()
+                didFindLocation = true
+                locationManager.stopUpdatingLocation()
+            }else{
+                locationManager.startUpdatingLocation()
+            }
+        }
     }
-    struct Temperature: Decodable {
-        let day: Float
-        let min: Float
-        let max: Float
-    }
+    
+    
 
 }
 
